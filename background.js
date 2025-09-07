@@ -1,3 +1,16 @@
+let offscreenDocument;
+
+async function ensureOffscreenDocument() {
+  if (await chrome.offscreen.hasDocument()) {
+    return;
+  }
+  await chrome.offscreen.createDocument({
+    url: 'offscreen.html',
+    reasons: ['AUDIO_PLAYBACK'],
+    justification: 'To play pronunciation audio from an external source.',
+  });
+}
+
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.type === 'getDefinition') {
     fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${request.word}`)
@@ -11,6 +24,11 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
       });
     return true; // Indicates that the response is sent asynchronously
   } else if (request.type === 'speak') {
-    chrome.tts.speak(request.word, { 'rate': 0.7 });
+    (async () => {
+      await ensureOffscreenDocument();
+      const audioUrl = `https://dict.youdao.com/dictvoice?audio=${request.word}&type=0`;
+      chrome.runtime.sendMessage({ type: 'playAudio', url: audioUrl });
+    })();
+    return true;
   }
 });

@@ -5,10 +5,11 @@
   "description": "A simple Chrome extension that allows you to quickly look up the definition of a word on any webpage.",
   "permissions": [
     "storage",
-    "tts"
+    "offscreen"
   ],
   "host_permissions": [
-    "https://api.dictionaryapi.dev/api/v2/entries/en/*"
+    "https://api.dictionaryapi.dev/api/v2/entries/en/*",
+    "https://dict.youdao.com/*"
   ],
   "background": {
     "service_worker": "background.js"
@@ -31,5 +32,10 @@
       "resources": [ "popup.html" ],
       "matches": [ "<all_urls>" ]
     }
-  ]
+  ],
+  "offscreen": {
+    "reasons": ["AUDIO_PLAYBACK"],
+    "justification": "To play pronunciation audio from an external source.",
+    "document_path": "offscreen.html"
+  }
 }
