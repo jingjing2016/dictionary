@@ -1,0 +1,56 @@
+#word-definer-popup {
+  position: absolute;
+  z-index: 9999;
+  background-color: #f9f9f9;
+  border: 1px solid #d3d3d3;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  padding: 10px;
+  font-family: sans-serif;
+  font-size: 14px;
+  color: #333;
+  width: 300px;
+}
+
+#word-definer-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+#word-definer-word {
+  font-weight: bold;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+#word-definer-phonetic {
+  font-style: italic;
+  color: #666;
+}
+
+#word-definer-speak-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: auto;
+}
+
+#word-definer-definitions {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.word-definer-definition {
+  margin-bottom: 10px;
+}
+
+.word-definer-part-of-speech {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.word-definer-meaning {
+  padding-left: 15px;
+}

@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "Word Definer",
+  "version": "1.0",
+  "description": "A simple Chrome extension that allows you to quickly look up the definition of a word on any webpage.",
+  "permissions": [
+    "storage",
+    "tts"
+  ],
+  "host_permissions": [
+    "https://api.dictionaryapi.dev/api/v2/entries/en/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "css": [
+        "popup.css"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [ "popup.html" ],
+      "matches": [ "<all_urls>" ]
+    }
+  ]
+}
