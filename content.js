@@ -60,6 +60,9 @@ async function showPopup(data, event) {
       chrome.runtime.sendMessage({ type: 'speak', word: wordData.word });
     };
 
+    // Automatically play the pronunciation
+    chrome.runtime.sendMessage({ type: 'speak', word: wordData.word });
+
   } else {
     wordEl.textContent = 'No definition found.';
     phoneticEl.textContent = '';

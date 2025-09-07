@@ -27,8 +27,9 @@ Once the extension is loaded, you can test its features by following these steps
 
 ### 2.2. Test Audio Pronunciation
 
-1.  **Click the Speaker Icon**: In the popup window, click the speaker icon (🔊).
-2.  **Verify Audio**: You should hear the word being pronounced. The audio is now sourced from Youdao Dictionary, so the voice may differ from the browser's default text-to-speech engine.
+1.  **Test Automatic Playback**: Double-click a word to look it up. The pronunciation should play automatically as soon as the pop-up appears.
+2.  **Test Manual Playback**: Click the speaker icon (🔊) in the pop-up window. The pronunciation should play again.
+3.  **Verify Audio Source**: The audio is sourced from Youdao Dictionary.
 
 ### 2.3. Test Popup Closing
 
