@@ -1,0 +1,1 @@
+Create a Chrome extension with a word dictionary feature. When a user double-clicks a word on a webpage, a small window should pop up, displaying the word's phonetic transcription, definition, and the ability to play its pronunciation.
